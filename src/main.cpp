@@ -1,7 +1,7 @@
-#include "biseccion.hpp"
-#include "newton_raphson.hpp"
-#include "trapecios.hpp"
-#include "simpson.hpp"
+#include "algoritmos/biseccion.hpp"
+#include "algoritmos/newton_raphson.hpp"
+#include "algoritmos/trapecios.hpp"
+#include "algoritmos/simpson.hpp"
 #include <iostream>
 #include <cmath>
 
