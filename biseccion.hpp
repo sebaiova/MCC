@@ -29,7 +29,6 @@ double biseccion(Function f)
 		std::cout << "No se cumple la condicion inicial!\n";	
 
 	return r;
-
 }
 
 
