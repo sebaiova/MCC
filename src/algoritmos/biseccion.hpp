@@ -1,8 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-template<class Function>
-double biseccion(Function f)
+template<class F> double biseccion(F f)
 {
 	double a, b, e, r=0.0;
 	std::cout << "Ingrese el valor de a: ";
