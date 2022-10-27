@@ -2,28 +2,21 @@
 #include "algoritmos/newton_raphson.hpp"
 #include "algoritmos/trapecios.hpp"
 #include "algoritmos/simpson.hpp"
+#include "algoritmos/riemman.hpp"
 #include <iostream>
 #include <cmath>
 
-double f(double x)
-{
-	return std::tan(x);
-}
+double PI = 3.14159265359;
 
-/*double f(double x)
+double f(double x, double y)
 {
-	return std::pow(x, 3) - 2*x -1;
+	return 16-(std::pow(x,2))-(2*(std::pow(y,2)));
 }
-
-double dxf(double x)
-{
-	return std::pow(3*x, 2) - 2;
-}*/
 
 int main()
 {
-	std::cout << "Utilizando Simpson...\n";
-	double resultado = simpson(f);
+	std::cout << "Utilizando Riemman...\n";
+	double resultado = riemman(f, 0, 0, 2, 2, 4, 4);
 	std::cout << "Resultado: " << resultado << "\n";
 	return 0;
 }

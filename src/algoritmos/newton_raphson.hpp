@@ -6,7 +6,7 @@ template<class Function> double newton_raphson(Function f, Function dxf)
     double x0, x1, e;
     std::cout << "Ingrese x0: ";
     std::cin >> x0;
-    x1 = x1;
+    x1 = x0;
 
     std::cout << "Ingrese el valor de E: ";
     std::cin >> e;
