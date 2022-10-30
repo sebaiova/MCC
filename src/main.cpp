@@ -6,17 +6,17 @@
 #include <iostream>
 #include <cmath>
 
-double PI = 3.14159265359;
+constexpr const double PI = 3.14159265359;
 
-double f(double x, double y)
+constexpr double f(double x, double y)
 {
-	return 16-(std::pow(x,2))-(2*(std::pow(y,2)));
+	return 16-(x*x)-(2*y*y);
 }
 
 int main()
 {
 	std::cout << "Utilizando Riemman...\n";
-	double resultado = riemman(f, 0, 0, 2, 2, 4, 4);
+	double resultado = riemman(f, 0, 0, 2, 2, 8, 8);
 	std::cout << "Resultado: " << resultado << "\n";
 	return 0;
 }
