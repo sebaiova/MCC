@@ -17,6 +17,11 @@ constexpr double g(double x)
 	return std::sin(x);
 }
 
+constexpr double z(double x, double y)
+{
+	return 16 - (x*x) - (2*y*y);
+}
+
 using namespace mcc;
 
 int main()
@@ -25,6 +30,10 @@ int main()
 
 	std::cout << "Utilizando Trapecio 1 variable...\n";
 	resultado = integrar<Trapecio>(g, 0, PI/2, 4);
+	std::cout << "Resultado: " << resultado << "\n";
+
+	std::cout << "Utilizando Riemman 2 variable...\n";
+	resultado = integrar<Riemman>(z, 0, 2, 4, 0, 2, 4);
 	std::cout << "Resultado: " << resultado << "\n";
 
 	std::cout << "Utilizando Simpson 2 variables...\n";

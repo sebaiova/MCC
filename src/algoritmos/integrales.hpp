@@ -25,6 +25,24 @@ namespace mcc {
         return vec;
     }
         
+    struct Riemman {
+        template<typename Container2D>
+        static double doble(Container2D const& container, double h, double k)
+        {
+            double area { h * k }, volumen { 0 };
+
+            std::vector<std::vector<double>> cont(container.begin(), container.end()-1);
+
+            for(auto& vec_y : cont) {
+                 std::vector<double>  vec_yy(vec_y.begin(), vec_y.end()-1);
+                for(auto& xy: vec_yy)
+ 
+                    volumen += (xy*area);
+            }
+            return volumen;
+        }
+    };
+
     struct Trapecio {
         template<typename Container>
         static double simple(Container const& container, double h)
