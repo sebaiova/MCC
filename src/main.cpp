@@ -2,14 +2,15 @@
 #include "algoritmos/newton_raphson.hpp"
 #include "algoritmos/integrales.hpp"
 #include "algoritmos/riemman.hpp"
+#include "algoritmos/euler.hpp"
 #include <iostream>
 #include <cmath>
 
 constexpr const double PI = 3.14159265359;
 
-constexpr double f(double x, double y)
+constexpr double f(double, double y)
 {
-	return (x*x)+(y*y);
+	return (y*y) + 1;
 }
 
 constexpr double g(double x) 
@@ -21,15 +22,10 @@ using namespace mcc;
 
 int main()
 {
-	double resultado;
-
-	std::cout << "Utilizando Trapecio 1 variable...\n";
-	resultado = integrar<Trapecio>(g, 0, PI/2, 4);
-	std::cout << "Resultado: " << resultado << "\n";
-
-	std::cout << "Utilizando Simpson 2 variables...\n";
-	resultado = integrar<Simpson>(f, 0, 2, 2, 0, 2, 2);
-	std::cout << "Resultado: " << resultado << "\n";
+	std::cout << "Utilizando Euler\n";
+	auto resultado = euler(f, std::make_pair(0, 0), 0.1, 6);
+	for(auto& p : resultado)
+		std::cout << p.first << "\ty: " << p.second << "\n";
 
 	return 0;
 }
