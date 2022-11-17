@@ -1,3 +1,4 @@
+#pragma once
 
 template <class Function>
 double riemman(Function f, double x0, double y0, double x1, double y1, int n, int m)
