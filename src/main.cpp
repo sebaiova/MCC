@@ -2,7 +2,7 @@
 #include "algoritmos/newton_raphson.hpp"
 #include "algoritmos/integrales.hpp"
 #include "algoritmos/riemman.hpp"
-#include "algoritmos/euler.hpp"
+#include "algoritmos/ecuaciones_diferenciales.hpp"
 #include <iostream>
 #include <cmath>
 
